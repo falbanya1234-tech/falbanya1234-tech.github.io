@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="えりにゃんアプリ — Android アプリ「ひびカレ」の開発者サイト">
+  <title>えりにゃんアプリ</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, "Helvetica Neue", Arial, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: #f7f8fc;
+      color: #333;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+      padding: 18px 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    header .site-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #222;
+    }
+    header .site-sub {
+      font-size: 0.82rem;
+      color: #aaa;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 44px 24px 100px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #eef1ff 0%, #f7f0ff 100%);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+    }
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #8899ee;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .hero-platform {
+      font-size: 0.82rem;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* ── Badges ── */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: #fff;
+      color: #667;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 4px 12px;
+      border: 1px solid #dde;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px 28px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    /* ── Feature list ── */
+    .features {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .features li {
+      font-size: 0.93rem;
+      color: #444;
+      padding-left: 1.6em;
+      position: relative;
+    }
+    .features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #7788ee;
+      font-weight: 700;
+    }
+    .features li strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* ── Links ── */
+    .link-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .link-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.93rem;
+      color: #5570dd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .link-list a:hover { text-decoration: underline; }
+
+    /* ── Contact ── */
+    .contact-email {
+      font-size: 0.93rem;
+      color: #555;
+    }
+    .contact-email a {
+      color: #5570dd;
+      text-decoration: none;
+    }
+    .contact-email a:hover { text-decoration: underline; }
+    .contact-note {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 6px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #bbb;
+      padding: 40px 24px;
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 28px 22px; }
+      .hero-title { font-size: 1.6rem; }
+      .card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="site-name">えりにゃんアプリ</span>
+  <span class="site-sub">Android アプリ 開発者サイト</span>
+</header>
+
+<main>
+
+  <!-- ── アプリ紹介 ── -->
+  <section class="hero">
+    <div class="hero-label">Android App</div>
+    <h1 class="hero-title">ひびカレ</h1>
+    <div class="hero-platform">Android 8.0（API 26）以上 対応</div>
+    <p class="hero-desc">
+      日々の予定をシンプルに管理できる日本語カレンダーアプリです。<br>
+      「話して追加」で声だけすばやく予定を登録できるのが特徴で、
+      忙しいときでもスムーズに使えます。
+    </p>
+    <div class="badges">
+      <span class="badge">無料</span>
+      <span class="badge">広告あり</span>
+      <span class="badge">Android 8.0 以上</span>
+      <span class="badge">日本語対応</span>
+    </div>
+  </section>
+
+  <!-- ── 主な機能 ── -->
+  <div class="card">
+    <div class="card-title">主な機能</div>
+    <ul class="features">
+      <li><strong>音声入力で予定を追加</strong>「明日の14時に歯医者」のように話すだけで登録できます</li>
+      <li><strong>月カレンダー表示</strong>一覧でひと目で予定を把握</li>
+      <li><strong>今日の予定ビュー</strong>円形・タイムライン・一覧の3スタイルから選択</li>
+      <li><strong>スケジュール一覧</strong>先々の予定をリストで確認</li>
+      <li><strong>リマインダー通知</strong>指定した時刻に通知</li>
+      <li><strong>六曜・天気の表示</strong>カレンダーに情報を追加表示</li>
+      <li><strong>テーマカラー変更</strong>好みのデザインにカスタマイズ</li>
+      <li><strong>スタンプ・カラーラベル</strong>予定を色分けして分かりやすく管理</li>
+      <li><strong>繰り返し予定</strong>週次・月次などの定期予定に対応</li>
+    </ul>
+  </div>
+
+  <!-- ── リンク ── -->
+  <div class="card">
+    <div class="card-title">リンク</div>
+    <ul class="link-list">
+      <li>
+        <!-- Google Play 公開後にURLを差し替えてください -->
+        <a href="#">Google Play でダウンロード（準備中）</a>
+      </li>
+      <li>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ── お問い合わせ ── -->
+  <div class="card">
+    <div class="card-title">お問い合わせ</div>
+    <p class="contact-email">
+      ご意見・不具合のご報告は下記メールアドレスまでお送りください。<br>
+      <!-- TODO: 実際のメールアドレスに差し替えてください -->
+      <a href="mailto:contact@example.com">contact@example.com</a>
+    </p>
+    <p class="contact-note">内容によってはご返答できない場合があります。あらかじめご了承ください。</p>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 えりにゃんアプリ
+</footer>
+
+</body>
+</html>
